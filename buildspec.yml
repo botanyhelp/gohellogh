@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      golang: 1.18
+
+  build:
+    commands:
+      - echo BUILD go build server.go STARTED ON `date`
+      - go build server.go
+
+artifacts:
+  files:
+    - 'server'
+    - 'README.md'
+    - 'ApplicationStart.sh'
+    - 'ApplicationStop.sh'
+    - 'appspec.yml'
+    - 'buildspec.yml'
+    - 'server.go'
+  name: server.zip

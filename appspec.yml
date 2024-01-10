@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+  - source: /server
+    destination: /opt
+file_exists_behavior: OVERWRITE
+hooks:
+  ApplicationStop:
+    - location: ApplicationStop.sh
+  ApplicationStart:
+    - location: ApplicationStart.sh
